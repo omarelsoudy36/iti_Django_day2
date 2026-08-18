@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lucky Fortune</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Lucky Fortune Teller 🔮</h1>
+    <p>Click the button to reveal your code fortune today!</p>
+    
+    <form method="GET" action="">
+        <button type="submit" name="get_fortune" value="true" style="background-color: #9b59b6;">Tell My Fortune!</button>
+    </form>
+
+    {% if fortune %}
+        <div class="result-box" style="border-top: 5px solid #9b59b6;">
+            <h2 style="color: #8e44ad; font-style: italic;">"{{ fortune }}"</h2>
+        </div>
+    {% endif %}
+</body>
+</html>

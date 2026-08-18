@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Rock, Paper, Scissors Game 🪨📄✂️</h1>
+    <h3>Choose your weapon:</h3>
+    <a href="?choice=Rock"><button style="background-color: #e74c3c;">Rock (حجر)</button></a>
+    <a href="?choice=Paper"><button style="background-color: #f1c40f; color: #333;">Paper (ورقة)</button></a>
+    <a href="?choice=Scissors"><button style="background-color: #2ecc71;">Scissors (مقص)</button></a>
+
+    {% if result %}
+        <div class="result-box">
+            <h2>Your Choice: <span style="color: #3498db;">{{ user }}</span></h2>
+            <h2>Computer's Choice: <span style="color: #e67e22;">{{ comp }}</span></h2>
+            <hr>
+            <h1 style="color: #2c3e50;">{{ result }}</h1>
+        </div>
+    {% endif %}
+</body>
+</html>
